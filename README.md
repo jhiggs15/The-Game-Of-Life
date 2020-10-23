@@ -1,8 +1,8 @@
 # The-Game-Of-Life
-### John Conways game of life with threads!\
-### Coded in C++ for CS 3013 (Operating Systems)
-
-
+### John Conways game of life with threads! Coded in C++ for CS 3013 (Operating Systems) at WPI
+  
+  
+#### The following is the project statement provided
 The Game of Life was invented by John Conway. The original article describing the game can
 be found in the April 1970 issue of Scientific American (http://www.sciam.com/), page
 120. The game is played on a grid of cells, each of which has eight neighbors (adjacent cells).
