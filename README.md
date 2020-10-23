@@ -12,9 +12,17 @@ grid are unoccupied. The rules for deriving a generation from the previous one a
 - Death. If an occupied cell has 0, 1, 4, 5, 6, 7, or 8 occupied neighbors, the organism dies (0
 or 1 of loneliness; 4 thru 8 of overcrowding).
 - Survival. If an occupied cell has two or three neighbors, the organism survives to the next
-generation.\
+generation.
 - Birth. If an unoccupied cell has three occupied neighbors, it becomes occupied.
 
 Once started with an initial configuration of organisms (Generation 0), the game continues
 from one generation to the next until a predefined number of generations is reached.
-The straightforward way in which to implement the program is to maintain two separate twodimensional arrays for even and odd generations. These can be maintained as globalvariables.
+
+Use multiple threads to perform the work. This approach could improve performance on a multiprocessor, but introduces added complexity on synchronizing the activities of the threads.
+You will use thread 0 to coordinate the activities of one or more worker threads, which are
+actually doing the work of playing the game. Each worker thread computes the new generation
+of the game for an assigned range of rows as initially specified by thread 0. The number of rows
+assigned to each thread by thread 0 should be roughly equal. After each generation, each thread
+reports results back to thread 0 and waits for a GO message from thread 0 before continuing to
+the next generation.
+
