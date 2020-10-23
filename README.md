@@ -30,7 +30,7 @@ the next generation. If any of the following three conditions are met
 2. the pattern of organisms is unchanged from one generation to the next, or
 3. a predefined number of generations is reached.
 
-before the desired number of generations then the game terminates early.
+before the desired number of generations then the game terminates.
 
 Your program should accept 3-5 command line arguments with the following syntax:\
 % ./life threads filename generations print input
